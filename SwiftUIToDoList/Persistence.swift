@@ -1,8 +1,15 @@
-//
-//  Persistence.swift
-//  SwiftUIToDoList
-//
-//  Created by Lucas Barbosa de Oliveira on 02/05/22.
-//
+import CoreData
 
-import Foundation
+struct PersistentController{
+    static let shared = PersistentController()
+    let container: NSPersistentContainer
+    
+    init(){
+        container = NSPersistentContainer(name: "Todo")
+        container.loadPersistentStores(completionHandler: {(storeDescription, error) in
+            if let error = error as NSError?{
+                fatalError("unresolved error: \(error)")
+            }
+        })
+    }
+}

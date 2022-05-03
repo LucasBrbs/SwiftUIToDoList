@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC01A96F28201E6F000E430A /* Todo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FC01A96D28201E6F000E430A /* Todo.xcdatamodeld */; };
+		FC01A9712820200A000E430A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC01A9702820200A000E430A /* Persistence.swift */; };
 		FCC3914528103D0300C41376 /* SwiftUIToDoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC3914428103D0300C41376 /* SwiftUIToDoListApp.swift */; };
 		FCC3914728103D0300C41376 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC3914628103D0300C41376 /* ContentView.swift */; };
 		FCC3914928103D0300C41376 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCC3914828103D0300C41376 /* Assets.xcassets */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FC01A96E28201E6F000E430A /* Todo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Todo.xcdatamodel; sourceTree = "<group>"; };
+		FC01A9702820200A000E430A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		FCC3914128103D0300C41376 /* SwiftUIToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCC3914428103D0300C41376 /* SwiftUIToDoListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIToDoListApp.swift; sourceTree = "<group>"; };
 		FCC3914628103D0300C41376 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +102,8 @@
 				FCC3914628103D0300C41376 /* ContentView.swift */,
 				FCC3914828103D0300C41376 /* Assets.xcassets */,
 				FCC3914A28103D0300C41376 /* Preview Content */,
+				FC01A96D28201E6F000E430A /* Todo.xcdatamodeld */,
+				FC01A9702820200A000E430A /* Persistence.swift */,
 			);
 			path = SwiftUIToDoList;
 			sourceTree = "<group>";
@@ -258,6 +264,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCC3914728103D0300C41376 /* ContentView.swift in Sources */,
+				FC01A9712820200A000E430A /* Persistence.swift in Sources */,
+				FC01A96F28201E6F000E430A /* Todo.xcdatamodeld in Sources */,
 				FCC3914528103D0300C41376 /* SwiftUIToDoListApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -577,6 +585,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FC01A96D28201E6F000E430A /* Todo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FC01A96E28201E6F000E430A /* Todo.xcdatamodel */,
+			);
+			currentVersion = FC01A96E28201E6F000E430A /* Todo.xcdatamodel */;
+			path = Todo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FCC3913928103D0300C41376 /* Project object */;
 }
