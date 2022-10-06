@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F3B9D3CF28EF6CE400D49667 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B9D3CE28EF6CE400D49667 /* AddView.swift */; };
 		FC01A96F28201E6F000E430A /* Todo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FC01A96D28201E6F000E430A /* Todo.xcdatamodeld */; };
 		FC01A9712820200A000E430A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC01A9702820200A000E430A /* Persistence.swift */; };
 		FCC3914528103D0300C41376 /* SwiftUIToDoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC3914428103D0300C41376 /* SwiftUIToDoListApp.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F3B9D3CE28EF6CE400D49667 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		FC01A96E28201E6F000E430A /* Todo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Todo.xcdatamodel; sourceTree = "<group>"; };
 		FC01A9702820200A000E430A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		FCC3914128103D0300C41376 /* SwiftUIToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +77,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F3B9D3CD28EF6CB100D49667 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FCC3914628103D0300C41376 /* ContentView.swift */,
+				F3B9D3CE28EF6CE400D49667 /* AddView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		FCC3913828103D0300C41376 = {
 			isa = PBXGroup;
 			children = (
@@ -98,8 +109,8 @@
 		FCC3914328103D0300C41376 /* SwiftUIToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				F3B9D3CD28EF6CB100D49667 /* Views */,
 				FCC3914428103D0300C41376 /* SwiftUIToDoListApp.swift */,
-				FCC3914628103D0300C41376 /* ContentView.swift */,
 				FCC3914828103D0300C41376 /* Assets.xcassets */,
 				FCC3914A28103D0300C41376 /* Preview Content */,
 				FC01A96D28201E6F000E430A /* Todo.xcdatamodeld */,
@@ -266,6 +277,7 @@
 				FCC3914728103D0300C41376 /* ContentView.swift in Sources */,
 				FC01A9712820200A000E430A /* Persistence.swift in Sources */,
 				FC01A96F28201E6F000E430A /* Todo.xcdatamodeld in Sources */,
+				F3B9D3CF28EF6CE400D49667 /* AddView.swift in Sources */,
 				FCC3914528103D0300C41376 /* SwiftUIToDoListApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,6 +445,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -462,6 +475,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
