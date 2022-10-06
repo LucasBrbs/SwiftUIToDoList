@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-
-
-
-
 struct ContentView: View {
    
     @Environment(\.managedObjectContext) private var viewContext
@@ -24,6 +20,7 @@ struct ContentView: View {
             let todo = todosCD[index]
             viewContext.delete(todo)
         }
+        
         do {
             try viewContext.save()
         } catch {
@@ -33,85 +30,88 @@ struct ContentView: View {
     }
     
     var body: some View {
-        NavigationView{
-            List{
+        NavigationView {
+            List {
                 ForEach(todosCD, id:\.self){ (todo) in
                     NavigationLink(destination:
-                                    VStack{
-                            Text(todo.name ?? "untitled")
-                            Image(todo.category ?? "").resizable().frame(width: 200, height: 200)
-                        }
+                                    VStack {
+                        Text(todo.name ?? "untitled")
+                        Image(todo.category ?? "")
+                            .resizable()
+                            .frame(
+                                width: 200,
+                                height: 200
+                            )
+                    }
                     ){
-                    
-                    HStack{
-                        Image(todo.category ?? "").resizable().frame(width: 50, height: 50)
-                        Text(todo.name ?? "intitled")
+                        
+                        HStack {
+                            Image(todo.category ?? "")
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                            Text(todo.name ?? "intitled")
+                        }
                     }
                 }
-            }
-                .onDelete(perform: {IndexSet in //todos.remove(atOffsets: IndexSet)
+                .onDelete(perform: { IndexSet in //todos.remove(atOffsets: IndexSet)
                     deleteTodo(offsets: IndexSet)
-                    }
-         )
-                .onMove(perform: {indices, newOffset in
+                })
+                .onMove(perform: { indices, newOffset in
                     //todos.move(fromOffsets: indices, toOffset: newOffset)
                 })
-        }.navigationBarTitle("Todos Items")
-                .navigationBarItems(leading:Button("Add")
-                                    {
-                    //addTodo()
-                    self.showAddTodoView.toggle()}.sheet(isPresented: $showAddTodoView){
-                        AddTodoView(showAddTodoView: self.$showAddTodoView)
-                },
-                                    trailing: EditButton())
-    }
-        
-        
-        
-        
-        
+            }
+            .navigationBarTitle("Todos Items")
+            .navigationBarItems(leading:Button("Add") {
+                //addTodo()
+                self.showAddTodoView.toggle()
+            }
+                .sheet(isPresented: $showAddTodoView) {
+                    AddTodoView(showAddTodoView: self.$showAddTodoView)
+                }, trailing: EditButton())
+        }
     }
 }
 
-struct AddTodoView:View{
+struct AddTodoView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Binding var showAddTodoView: Bool
-    
     
     @State private var name:String = ""
     @State private var selectedCategory = 0
     
-    
     var categoryTypes = ["Family","Personal","Work"]
     
-    
-    
     var body: some View {
-        VStack{
-            Text("Add todo").font(.largeTitle)
+        VStack {
+            Text("Add todo")
+                .font(.largeTitle)
             TextField("To do Name", text: $name)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                .border(Color.black).padding()
+                .border(Color.black)
+                .padding()
             
             Text("Select category")
-            Picker("",selection: $selectedCategory){
-                ForEach(0 ..< categoryTypes.count){
+            Picker("",selection: $selectedCategory) {
+                ForEach(0 ..< categoryTypes.count) {
                     Text(self.categoryTypes[$0])
                 }
-            }.pickerStyle(SegmentedPickerStyle())
-        }.padding()
-            Button("Done"){
-            self.showAddTodoView = false
-            let newTodoCD = TodoCD(context: viewContext)
-                newTodoCD.name = name
-                newTodoCD.category = categoryTypes[selectedCategory]
-                do{
-                    try viewContext.save()
-                }
-                catch{
-                    let error = error as NSError
-                    fatalError("unressolved error:\(error)")
-                }
+            }
+            .pickerStyle(SegmentedPickerStyle())
+        }
+        .padding()
+            
+        Button("Done") {
+        self.showAddTodoView = false
+        let newTodoCD = TodoCD(context: viewContext)
+            newTodoCD.name = name
+            newTodoCD.category = categoryTypes[selectedCategory]
+            do {
+                try viewContext.save()
+            }
+            catch {
+                let error = error as NSError
+                fatalError("unressolved error:\(error)")
+            }
         }
     }
 }
