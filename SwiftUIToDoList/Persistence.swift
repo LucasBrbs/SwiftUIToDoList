@@ -4,10 +4,10 @@ struct PersistentController{
     static let shared = PersistentController()
     let container: NSPersistentContainer
     
-    init(){
+    init() {
         container = NSPersistentContainer(name: "Todo")
-        container.loadPersistentStores(completionHandler: {(storeDescription, error) in
-            if let error = error as NSError?{
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error as NSError? {
                 fatalError("unresolved error: \(error)")
             }
         })
